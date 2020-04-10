@@ -41,7 +41,7 @@ This is a comparison of the different YAML Schemas.
 <tr><td>[-+]? 0x [0-9a-fA-F_]+</td><td>tag:yaml.org,2002:int (Base 16)</td></tr>
 <tr><td>[-+]? [1-9] [0-9_]* ( : [0-5]? [0-9] )+</td><td>tag:yaml.org,2002:int (Base 60)</td></tr>
 
-<tr><td>[-+]? ( [0-9] [0-9_]* )? \. [0-9.]* ( [eE] [-+] [0-9]+ )?</td><td>tag:yaml.org,2002:float (Base 10)</td></tr>
+<tr><td>[-+]? ( [0-9] [0-9_]* )? \. [0-9_]* ( [eE] [-+] [0-9]+ )?</td><td>tag:yaml.org,2002:float (Base 10)</td></tr>
 <tr><td>[-+]? [0-9] [0-9_]* ( : [0-5]? [0-9] )+ \. [0-9_ ]*</td><td>tag:yaml.org,2002:float (Base 60)</td></tr>
 <tr><td>[-+]? \. ( inf | Inf | INF )</td><td>tag:yaml.org,2002:float (Infinity)</td></tr>
 <tr><td>\. ( nan | NaN |NAN )</td><td>tag:yaml.org,2002:float (Not a number)</td></tr>
@@ -52,6 +52,9 @@ This is a comparison of the different YAML Schemas.
 </table>
 
 There are more types not listed here for YAML 1.1 (like '!!timestamp', '!!binary', '!!merge').
+<br>
+The regex for "tag:yaml.org,2002:float (base 10)" includes a typo fix ("[0-9_]"
+instead of "[0-9.]").
 
 <h3><a href="https://yaml.org/spec/1.2/spec.html#id2803231">YAML 1.2 JSON Schema</a></h3>
 
