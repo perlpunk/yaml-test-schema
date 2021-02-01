@@ -651,6 +651,19 @@
 '.14':
   failsafe, json: ['str', '.14', '.14']
   core, yaml11: ['float', '0.14', '0.14']
+'._14':
+  failsafe, json, core: ['str', '._14', '._14']
+  yaml11: ['float', '0.14', '0.14']
+'.':
+  failsafe, json, core: ['str', '.', '.']
+  yaml11: ['float', '0.0', '0.0']
+'._':
+  failsafe, json, core: ['str', '._', '._']
+  yaml11: ['float', '0.0', '0.0']
+'3.':
+  failsafe: ['str', '3.', '3.']
+  json, core, yaml11: ['float', '3.0', '3.0']
+
 
 '0.0':
   failsafe: ['str', '0.0', '0.0']
@@ -674,8 +687,18 @@
 
 '!!float .0':
   core, yaml11: ['float', '0.0', '0.0']
+'!!float .14':
+  core, yaml11: ['float', '0.14', '0.14']
 '!!float 0.0':
   json, core, yaml11: ['float', '0.0', '0.0']
+'!!float .':
+  yaml11: ['float', '0.0', '0.0']
+'!!float ._':
+  yaml11: ['float', '0.0', '0.0']
+'!!float ._14':
+  yaml11: ['float', '0.14', '0.14']
+'!!float 3.':
+  json, core, yaml11: ['float', '3.0', '3.0']
 '!!float 3.14':
   json, core, yaml11: ['float', '3.14', '3.14']
 '!!float -3.14':
@@ -689,9 +712,23 @@
 '!!str .0':
   failsafe, json: ['str', '.0', ".0"]
   core, yaml11: ['str', '.0', "'.0'"]
+'!!str .14':
+  failsafe, json: ['str', '.14', '.14']
+  core, yaml11: ['str', '.14', "'.14'"]
 '!!str 0.0':
   failsafe: ['str', '0.0', "0.0"]
   json, core, yaml11: ['str', '0.0', "'0.0'"]
+'!!str .':
+  failsafe, json, core: ['str', '.', '.']
+  yaml11: ['str', '.', "'.'"]
+'!!str ._':
+  failsafe, json, core: ['str', '._', '._']
+  yaml11: ['str', '._', "'._'"]
+'!!str ._14':
+  failsafe, json, core: ['str', '._14', '._14']
+  yaml11: ['str', '._14', "'._14'"]
+'!!str 3.':
+  json, core, yaml11: ['str', '3.', "'3.'"]
 '!!str 3.14':
   failsafe: ['str', '3.14', "3.14"]
   json, core, yaml11: ['str', '3.14', "'3.14'"]
