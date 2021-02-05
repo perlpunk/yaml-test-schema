@@ -660,6 +660,8 @@
 '._':
   failsafe, json, core: ['str', '._', '._']
   yaml11: ['float', '0.0', '0.0']
+'_._':
+  failsafe, json, core, yaml11: ['str', '_._', '_._']
 '3.':
   failsafe: ['str', '3.', '3.']
   json, core, yaml11: ['float', '3.0', '3.0']
@@ -724,6 +726,8 @@
 '!!str ._':
   failsafe, json, core: ['str', '._', '._']
   yaml11: ['str', '._', "'._'"]
+'!!str _._':
+  failsafe, json, core, yaml11: ['str', '_._', '_._']
 '!!str ._14':
   failsafe, json, core: ['str', '._14', '._14']
   yaml11: ['str', '._14', "'._14'"]
