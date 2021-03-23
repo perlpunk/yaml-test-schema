@@ -651,15 +651,30 @@
 '.14':
   failsafe, json: ['str', '.14', '.14']
   core, yaml11: ['float', '0.14', '0.14']
-'._14':
-  failsafe, json, core: ['str', '._14', '._14']
+'.1_4':
+  failsafe, json, core: ['str', '.1_4', '.1_4']
   yaml11: ['float', '0.14', '0.14']
+
+  ##################################################################
+  # The YAML 1.1 type spec https://yaml.org/type/float.html says:
+  # [-+]? ( [0-9][0-9_]* )? \.[0-9.]* ( [eE] [-+] [0-9]+ )? (base 10)
+  # The dot here -----------------^ is presumably a typo
+  # So we have this:
+  # [-+]? ( [0-9][0-9_]* )? \.[0-9_]* ( [eE] [-+] [0-9]+ )? (base 10)
+  # This is probably unintended because it would allow a single dot or
+  # '._' to be a float, although there is no digit in it at all.
+  # Most YAML libraries detect that as a string, so we can see it as
+  # a bug in the spec and recommend detecting it as a string too.
+  # This set of tests assumes the following regular expression:
+  # ([+-]? ( ( [0-9][0-9_]* ) \.[0-9_]* | ( \.[0-9][0-9_]* ) ) ( [eE] [+-] [0-9] + ) ? )
+  ##################################################################
 '.':
-  failsafe, json, core: ['str', '.', '.']
-  yaml11: ['float', '0.0', '0.0']
+  failsafe, json, core, yaml11: ['str', '.', '.']
 '._':
-  failsafe, json, core: ['str', '._', '._']
-  yaml11: ['float', '0.0', '0.0']
+  failsafe, json, core, yaml11: ['str', '._', '._']
+'._14':
+  failsafe, json, core, yaml11: ['str', '._14', '._14']
+
 '_._':
   failsafe, json, core, yaml11: ['str', '_._', '_._']
 '3.':
@@ -693,11 +708,7 @@
   core, yaml11: ['float', '0.14', '0.14']
 '!!float 0.0':
   json, core, yaml11: ['float', '0.0', '0.0']
-'!!float .':
-  yaml11: ['float', '0.0', '0.0']
-'!!float ._':
-  yaml11: ['float', '0.0', '0.0']
-'!!float ._14':
+'!!float .1_4':
   yaml11: ['float', '0.14', '0.14']
 '!!float 3.':
   json, core, yaml11: ['float', '3.0', '3.0']
@@ -721,16 +732,16 @@
   failsafe: ['str', '0.0', "0.0"]
   json, core, yaml11: ['str', '0.0', "'0.0'"]
 '!!str .':
-  failsafe, json, core: ['str', '.', '.']
-  yaml11: ['str', '.', "'.'"]
+  failsafe, json, core, yaml11: ['str', '.', '.']
 '!!str ._':
-  failsafe, json, core: ['str', '._', '._']
-  yaml11: ['str', '._', "'._'"]
+  failsafe, json, core, yaml11: ['str', '._', '._']
 '!!str _._':
   failsafe, json, core, yaml11: ['str', '_._', '_._']
 '!!str ._14':
-  failsafe, json, core: ['str', '._14', '._14']
-  yaml11: ['str', '._14', "'._14'"]
+  failsafe, json, core, yaml11: ['str', '._14', '._14']
+'!!str .1_4':
+  failsafe, json, core: ['str', '.1_4', '.1_4']
+  yaml11: ['str', '.1_4', "'.1_4'"]
 '!!str 3.':
   json, core, yaml11: ['str', '3.', "'3.'"]
 '!!str 3.14':
