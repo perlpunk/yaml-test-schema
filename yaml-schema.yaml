@@ -656,7 +656,7 @@
   yaml11: ['float', '0.14', '0.14']
 
   ##################################################################
-  # The TAML 1.1 type spec https://yaml.org/type/float.html says:
+  # The YAML 1.1 type spec https://yaml.org/type/float.html says:
   # [-+]? ( [0-9][0-9_]* )? \.[0-9.]* ( [eE] [-+] [0-9]+ )? (base 10)
   # The dot here -----------------^ is presumably a typo
   # So we have this:
