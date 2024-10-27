@@ -25,6 +25,7 @@
 '!!float +.Inf': ['inf', 'inf()', '.inf']
 '!!float +.inf': ['inf', 'inf()', '.inf']
 '!!float +0.3e+3': ['float', '300.0', '300.0']
+'!!float +0.3e3': error
 '!!float -.INF': ['inf', 'inf-neg()', '-.inf']
 '!!float -.Inf': ['inf', 'inf-neg()', '-.inf']
 '!!float -.inf': ['inf', 'inf-neg()', '-.inf']
@@ -34,6 +35,7 @@
 '!!float .1_4': ['float', '0.14', '0.14']
 '!!float .3E-1': ['float', '0.03', '0.03']
 '!!float .3e+3': ['float', '300.0', '300.0']
+'!!float .3e3': error
 '!!float .INF': ['inf', 'inf()', '.inf']
 '!!float .Inf': ['inf', 'inf()', '.inf']
 '!!float .NAN': ['nan', 'nan()', '.nan']
@@ -41,6 +43,7 @@
 '!!float .inf': ['inf', 'inf()', '.inf']
 '!!float .nan': ['nan', 'nan()', '.nan']
 '!!float 0.0': ['float', '0.0', '0.0']
+'!!float 0.3e3': error
 '!!float 001.23': ['float', '1.23', '1.23']
 '!!float 190:20:30.15': ['float', '685230.15', '685230.15']
 '!!float 3.': ['float', '3.0', '3.0']
@@ -67,6 +70,9 @@
 '!!int 07': ['int', '7', '7']
 '!!int 0b0': ['int', '0', '0']
 '!!int 0b100_101': ['int', '37', '37']
+'!!int 0o0': error
+'!!int 0o10': error
+'!!int 0o7': error
 '!!int 0x0': ['int', '0', '0']
 '!!int 0x10': ['int', '16', '16']
 '!!int 0x2_0': ['int', '32', '32']

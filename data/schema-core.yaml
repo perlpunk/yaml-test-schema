@@ -1,10 +1,26 @@
 ---
 '!!bool FALSE': ['bool', 'false()', 'false']
 '!!bool False': ['bool', 'false()', 'false']
+'!!bool N': error
+'!!bool NO': error
+'!!bool No': error
+'!!bool OFF': error
+'!!bool ON': error
+'!!bool Off': error
+'!!bool On': error
 '!!bool TRUE': ['bool', 'true()', 'true']
 '!!bool True': ['bool', 'true()', 'true']
+'!!bool Y': error
+'!!bool YES': error
+'!!bool Yes': error
 '!!bool false': ['bool', 'false()', 'false']
+'!!bool n': error
+'!!bool no': error
+'!!bool off': error
+'!!bool on': error
 '!!bool true': ['bool', 'true()', 'true']
+'!!bool y': error
+'!!bool yes': error
 '!!float +.INF': ['inf', 'inf()', '.inf']
 '!!float +.Inf': ['inf', 'inf()', '.inf']
 '!!float +.inf': ['inf', 'inf()', '.inf']
@@ -16,6 +32,7 @@
 '!!float -3.14': ['float', '-3.14', '-3.14']
 '!!float .0': ['float', '0.0', '0.0']
 '!!float .14': ['float', '0.14', '0.14']
+'!!float .1_4': error
 '!!float .3E-1': ['float', '0.03', '0.03']
 '!!float .3e+3': ['float', '300.0', '300.0']
 '!!float .3e3': ['float', '300.0', '300.0']
@@ -28,23 +45,41 @@
 '!!float 0.0': ['float', '0.0', '0.0']
 '!!float 0.3e3': ['float', '300.0', '300.0']
 '!!float 001.23': ['float', '1.23', '1.23']
+'!!float 190:20:30.15': error
 '!!float 3.': ['float', '3.0', '3.0']
 '!!float 3.14': ['float', '3.14', '3.14']
 '!!float 3.3e+3': ['float', '3300.0', '3300.0']
+'!!float 85.230_15e+03': error
+'!!float 85_230.15': error
 '!!int +0': ['int', '0', '0']
+'!!int +0100_200': error
+'!!int +0b100': error
+'!!int +190:20:30': error
 '!!int +23': ['int', '23', '23']
 '!!int -0': ['int', '0', '0']
+'!!int -0100_200': error
+'!!int -0b101': error
+'!!int -0x30': error
+'!!int -190:20:30': error
 '!!int -23': ['int', '-23', '-23']
 '!!int 0': ['int', '0', '0']
+'!!int 00': error
 '!!int 0011': ['int', '11', '11']
+'!!int 010': error
+'!!int 02_0': error
 '!!int 07': ['int', '7', '7']
+'!!int 0b0': error
+'!!int 0b100_101': error
 '!!int 0o0': ['int', '0', '0']
 '!!int 0o10': ['int', '8', '8']
 '!!int 0o7': ['int', '7', '7']
 '!!int 0x0': ['int', '0', '0']
 '!!int 0x10': ['int', '16', '16']
+'!!int 0x2_0': error
 '!!int 0x42': ['int', '66', '66']
 '!!int 0xa': ['int', '10', '10']
+'!!int 100_000': error
+'!!int 190:20:30': error
 '!!int 23': ['int', '23', '23']
 '!!null #empty': ['null', 'null()', "null"]
 '!!null NULL': ['null', 'null()', "null"]

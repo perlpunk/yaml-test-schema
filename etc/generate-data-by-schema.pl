@@ -32,13 +32,19 @@ for my $input (sort keys %$data) {
     }
 }
 for my $input (sort keys %$data_for_yaml) {
+    my %schemas;
+    @schemas{@schemas} = (1) x @schemas;
     for my $key (keys %{ $data_for_yaml->{ $input } }) {
         my $test_for_yaml = $data_for_yaml->{ $input }->{ $key };
         for my $schema (split m/, ?/, $key) {
+            delete $schemas{ $schema };
             my $hash = $yp->preserved_mapping({});
             $schemas_for_yaml{ $schema } ||= $hash;
             $schemas_for_yaml{ $schema }->{ $input } = $test_for_yaml;
         }
+    }
+    for my $schema (sort keys %schemas) {
+        $schemas_for_yaml{ $schema }->{ $input } = 'error';
     }
 }
 

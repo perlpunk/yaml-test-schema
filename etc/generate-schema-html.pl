@@ -19,6 +19,7 @@ my %examples;
 for my $input (sort keys %$data) {
     my $schemas = $data->{ $input };
     my @keys = keys %$schemas;
+    $examples{ $input } = {};
     for my $key (@keys) {
         my $def = $schemas->{ $key };
         my @schemas = split m/ *, */, $key;
@@ -34,9 +35,9 @@ for my $input (sort keys %examples) {
     for my $schema (@keys) {
         my $example = $schemas->{ $schema };
         unless ($example) {
-            $example = $schemas->{ $schema } = [ 'todo', '', '', '' ];
+            $example = $schemas->{ $schema } = [ 'error', '', '', '' ];
         }
-        if ($example->[0] eq 'str' or $example->[0] eq 'todo') {
+        if ($example->[0] eq 'str' or $example->[0] eq 'error') {
             $str++;
         }
     }
@@ -50,7 +51,7 @@ my %type_index = (
     nan => 4,
     int => 5,
     str => 6,
-    todo => 7,
+    error => 7,
 );
 my $table = schema_table(\%examples);
 my $html = generate_html($table);
