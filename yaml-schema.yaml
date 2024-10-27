@@ -30,6 +30,8 @@
 'TRUE':
   core, yaml11: ['bool', 'true()', 'true']
   failsafe, json: ['str', 'TRUE', 'TRUE']
+'TrUE':
+  failsafe, json, core, yaml11: ['str', 'TrUE', 'TrUE']
 'y':
   yaml11: ['bool', 'true()', "true"]
   failsafe, json, core: ['str', 'y', "y"]
@@ -76,6 +78,9 @@
   yaml11: ['bool', 'true()', "true"]
 '!!bool ON':
   yaml11: ['bool', 'true()', "true"]
+# error in all schemas
+'!!bool TrUE': {}
+'!!bool yEs': {}
 '!!str true':
   failsafe: ['str', 'true', 'true']
   json, core, yaml11: ['str', 'true', "'true'"]
@@ -124,6 +129,8 @@
 'FALSE':
   failsafe, json: ['str', 'FALSE', 'FALSE']
   core, yaml11: ['bool', 'false()', 'false']
+'fAlse':
+  failsafe, json, core, yaml11: ['str', 'fAlse', 'fAlse']
 'n':
   yaml11: ['bool', 'false()', "false"]
   failsafe, json, core: ['str', 'n', "n"]
@@ -139,6 +146,8 @@
 'no':
   yaml11: ['bool', 'false()', "false"]
   failsafe, json, core: ['str', 'no', "no"]
+'nO':
+  failsafe, yaml11, json, core: ['str', 'nO', "nO"]
 'off':
   yaml11: ['bool', 'false()', "false"]
   failsafe, json, core: ['str', 'off', "off"]
@@ -170,6 +179,9 @@
   yaml11: ['bool', 'false()', "false"]
 '!!bool OFF':
   yaml11: ['bool', 'false()', "false"]
+# error in all schemas
+'!!bool FaLSE': {}
+'!!bool nO': {}
 '!!str false':
   json, core, yaml11: ['str', 'false', "'false'"]
   failsafe: ['str', 'false', 'false']
@@ -217,6 +229,8 @@
 'NULL':
   failsafe, json: ['str', 'NULL', 'NULL']
   core, yaml11: ['null', 'null()', "null"]
+'nuLL':
+  failsafe, json, core, yaml11: ['str', 'nuLL', 'nuLL']
 '~':
   failsafe, json: ['str', '~', '~']
   core, yaml11: ['null', 'null()', "null"]
@@ -229,6 +243,8 @@
   core, yaml11: ['null', 'null()', "null"]
 '!!null ~':
   core, yaml11: ['null', 'null()', 'null']
+# error in all schemas
+'!!null NuLL': {}
 
 '!!str null':
   failsafe: ['str', 'null', 'null']
@@ -264,12 +280,19 @@
 '.INF':
   failsafe, json: ['str', '.INF', '.INF']
   core, yaml11: ['inf', 'inf()', '.inf']
+'.inF':
+  failsafe, json, core, yaml11: ['str', '.inF', '.inF']
+'inf':
+  failsafe, json, core, yaml11: ['str', 'inf', 'inf']
 '!!float .inf':
   core, yaml11: ['inf', 'inf()', '.inf']
 '!!float .Inf':
   core, yaml11: ['inf', 'inf()', '.inf']
 '!!float .INF':
   core, yaml11: ['inf', 'inf()', '.inf']
+# error in all schemas
+'!!float inf': {}
+'!!float .inF': {}
 '!!str .inf':
   failsafe, json: ['str', '.inf', ".inf"]
   core, yaml11: ['str', '.inf', "'.inf'"]
@@ -349,6 +372,9 @@
   core, yaml11: ['nan', 'nan()', '.nan']
 '!!float .NAN':
   core, yaml11: ['nan', 'nan()', '.nan']
+# error in all schemas
+'!!float nan': {}
+'!!float .nAn': {}
 '!!str .nan':
   failsafe, json: ['str', '.nan', ".nan"]
   core, yaml11: ['str', '.nan', "'.nan'"]
@@ -694,6 +720,12 @@
 '3.14':
   failsafe: ['str', '3.14', '3.14']
   json, core, yaml11: ['float', '3.14', '3.14']
+'03.14':
+  failsafe, json: ['str', '03.14', '03.14']
+  core, yaml11: ['float', '3.14', '3.14']
+'3.140':
+  failsafe: ['str', '3.140', '3.140']
+  json, core, yaml11: ['float', '3.14', '3.14']
 '001.23':
   failsafe, json: ['str', '001.23', '001.23']
   core, yaml11: ['float', '1.23', '1.23']
@@ -749,7 +781,7 @@
   failsafe, json, core: ['str', '.1_4', '.1_4']
   yaml11: ['str', '.1_4', "'.1_4'"]
 '!!str 3.':
-  json, core, yaml11: ['str', '3.', "'3.'"]
+  failsafe, json, core, yaml11: ['str', '3.', "'3.'"]
 '!!str 3.14':
   failsafe: ['str', '3.14', "3.14"]
   json, core, yaml11: ['str', '3.14', "'3.14'"]

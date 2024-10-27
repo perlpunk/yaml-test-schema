@@ -1,5 +1,6 @@
 ---
 '!!bool FALSE': ['bool', 'false()', 'false']
+'!!bool FaLSE': error
 '!!bool False': ['bool', 'false()', 'false']
 '!!bool N': ['bool', 'false()', "false"]
 '!!bool NO': ['bool', 'false()', "false"]
@@ -9,17 +10,20 @@
 '!!bool Off': ['bool', 'false()', "false"]
 '!!bool On': ['bool', 'true()', "true"]
 '!!bool TRUE': ['bool', 'true()', 'true']
+'!!bool TrUE': error
 '!!bool True': ['bool', 'true()', 'true']
 '!!bool Y': ['bool', 'true()', "true"]
 '!!bool YES': ['bool', 'true()', "true"]
 '!!bool Yes': ['bool', 'true()', "true"]
 '!!bool false': ['bool', 'false()', 'false']
 '!!bool n': ['bool', 'false()', "false"]
+'!!bool nO': error
 '!!bool no': ['bool', 'false()', "false"]
 '!!bool off': ['bool', 'false()', "false"]
 '!!bool on': ['bool', 'true()', "true"]
 '!!bool true': ['bool', 'true()', 'true']
 '!!bool y': ['bool', 'true()', "true"]
+'!!bool yEs': error
 '!!bool yes': ['bool', 'true()', "true"]
 '!!float +.INF': ['inf', 'inf()', '.inf']
 '!!float +.Inf': ['inf', 'inf()', '.inf']
@@ -40,7 +44,9 @@
 '!!float .Inf': ['inf', 'inf()', '.inf']
 '!!float .NAN': ['nan', 'nan()', '.nan']
 '!!float .NaN': ['nan', 'nan()', '.nan']
+'!!float .inF': error
 '!!float .inf': ['inf', 'inf()', '.inf']
+'!!float .nAn': error
 '!!float .nan': ['nan', 'nan()', '.nan']
 '!!float 0.0': ['float', '0.0', '0.0']
 '!!float 0.3e3': error
@@ -51,6 +57,8 @@
 '!!float 3.3e+3': ['float', '3300.0', '3300.0']
 '!!float 85.230_15e+03': ['float', '85230.15', '85230.15']
 '!!float 85_230.15': ['float', '85230.15', '85230.15']
+'!!float inf': error
+'!!float nan': error
 '!!int +0': ['int', '0', '0']
 '!!int +0100_200': ['int', '32896', '32896']
 '!!int +0b100': ['int', '4', '4']
@@ -83,6 +91,7 @@
 '!!int 23': ['int', '23', '23']
 '!!null #empty': ['null', 'null()', "null"]
 '!!null NULL': ['null', 'null()', "null"]
+'!!null NuLL': error
 '!!null Null': ['null', 'null()', "null"]
 '!!null null': ['null', 'null()', 'null']
 '!!null ~': ['null', 'null()', 'null']
@@ -210,6 +219,7 @@
 '.NaN': ['nan', 'nan()', '.nan']
 '._': ['str', '._', '._']
 '._14': ['str', '._14', '._14']
+'.inF': ['str', '.inF', '.inF']
 '.inf': ['inf', 'inf()', '.inf']
 '.nan': ['nan', 'nan()', '.nan']
 '0': ['int', '0', '0']
@@ -220,6 +230,7 @@
 '0011': ['int', '9', '9']
 '010': ['int', '8', '8']
 '02_0': ['int', '16', '16']
+'03.14': ['float', '3.14', '3.14']
 '07': ['int', '7', '7']
 '08': ['str', '08', '08']
 '0b0': ['int', '0', '0']
@@ -238,6 +249,7 @@
 '23': ['int', '23', '23']
 '3.': ['float', '3.0', '3.0']
 '3.14': ['float', '3.14', '3.14']
+'3.140': ['float', '3.14', '3.14']
 '3.3e+3': ['float', '3300', '3300.0']
 '3e3': ['str', '3e3', '3e3']
 '85.230_15e+03': ['float', '85230.15', '85230.15']
@@ -254,14 +266,19 @@
 'Off': ['bool', 'false()', "false"]
 'On': ['bool', 'true()', "true"]
 'TRUE': ['bool', 'true()', 'true']
+'TrUE': ['str', 'TrUE', 'TrUE']
 'True': ['bool', 'true()', 'true']
 'Y': ['bool', 'true()', "true"]
 'YES': ['bool', 'true()', "true"]
 'Yes': ['bool', 'true()', "true"]
 '_._': ['str', '_._', '_._']
+'fAlse': ['str', 'fAlse', 'fAlse']
 'false': ['bool', 'false()', 'false']
+'inf': ['str', 'inf', 'inf']
 'n': ['bool', 'false()', "false"]
+'nO': ['str', 'nO', "nO"]
 'no': ['bool', 'false()', "false"]
+'nuLL': ['str', 'nuLL', 'nuLL']
 'null': ['null', 'null()', "null"]
 'off': ['bool', 'false()', "false"]
 'on': ['bool', 'true()', "true"]

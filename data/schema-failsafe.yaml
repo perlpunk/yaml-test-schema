@@ -1,5 +1,6 @@
 ---
 '!!bool FALSE': error
+'!!bool FaLSE': error
 '!!bool False': error
 '!!bool N': error
 '!!bool NO': error
@@ -9,17 +10,20 @@
 '!!bool Off': error
 '!!bool On': error
 '!!bool TRUE': error
+'!!bool TrUE': error
 '!!bool True': error
 '!!bool Y': error
 '!!bool YES': error
 '!!bool Yes': error
 '!!bool false': error
 '!!bool n': error
+'!!bool nO': error
 '!!bool no': error
 '!!bool off': error
 '!!bool on': error
 '!!bool true': error
 '!!bool y': error
+'!!bool yEs': error
 '!!bool yes': error
 '!!float +.INF': error
 '!!float +.Inf': error
@@ -40,7 +44,9 @@
 '!!float .Inf': error
 '!!float .NAN': error
 '!!float .NaN': error
+'!!float .inF': error
 '!!float .inf': error
+'!!float .nAn': error
 '!!float .nan': error
 '!!float 0.0': error
 '!!float 0.3e3': error
@@ -51,6 +57,8 @@
 '!!float 3.3e+3': error
 '!!float 85.230_15e+03': error
 '!!float 85_230.15': error
+'!!float inf': error
+'!!float nan': error
 '!!int +0': error
 '!!int +0100_200': error
 '!!int +0b100': error
@@ -83,6 +91,7 @@
 '!!int 23': error
 '!!null #empty': error
 '!!null NULL': error
+'!!null NuLL': error
 '!!null Null': error
 '!!null null': error
 '!!null ~': error
@@ -143,7 +152,7 @@
 '!!str 190:20:30': ['str', '190:20:30', "190:20:30"]
 '!!str 190:20:30.15': ['str', '190:20:30.15', "190:20:30.15"]
 '!!str 23': ['str', '23', '23']
-'!!str 3.': error
+'!!str 3.': ['str', '3.', "'3.'"]
 '!!str 3.14': ['str', '3.14', "3.14"]
 '!!str 3.3e+3': ['str', '3.3e+3', "3.3e+3"]
 '!!str 85.230_15e+03': ['str', '85.230_15e+03', "85.230_15e+03"]
@@ -210,6 +219,7 @@
 '.NaN': ['str', '.NaN', '.NaN']
 ._: ['str', '._', '._']
 ._14: ['str', '._14', '._14']
+.inF: ['str', '.inF', '.inF']
 '.inf': ['str', '.inf', '.inf']
 '.nan': ['str', '.nan', '.nan']
 '0': ['str', '0', '0']
@@ -220,6 +230,7 @@
 '0011': ['str', '0011', '0011']
 '010': ['str', '010', '010']
 02_0: ['str', '02_0', '02_0']
+'03.14': ['str', '03.14', '03.14']
 '07': ['str', '07', '07']
 '08': ['str', '08', '08']
 0b0: ['str', '0b0', '0b0']
@@ -238,6 +249,7 @@
 '23': ['str', '23', '23']
 '3.': ['str', '3.', '3.']
 '3.14': ['str', '3.14', '3.14']
+'3.140': ['str', '3.140', '3.140']
 '3.3e+3': ['str', '3.3e+3', '3.3e+3']
 '3e3': ['str', '3e3', '3e3']
 85.230_15e+03: ['str', '85.230_15e+03', '85.230_15e+03']
@@ -254,14 +266,19 @@ ON: ['str', 'ON', "ON"]
 Off: ['str', 'Off', "Off"]
 On: ['str', 'On', "On"]
 'TRUE': ['str', 'TRUE', 'TRUE']
+TrUE: ['str', 'TrUE', 'TrUE']
 'True': ['str', 'True', 'True']
 Y: ['str', 'Y', "Y"]
 YES: ['str', 'YES', "YES"]
 Yes: ['str', 'Yes', "Yes"]
 _._: ['str', '_._', '_._']
+fAlse: ['str', 'fAlse', 'fAlse']
 'false': ['str', 'false', 'false']
+inf: ['str', 'inf', 'inf']
 n: ['str', 'n', "n"]
+nO: ['str', 'nO', "nO"]
 no: ['str', 'no', "no"]
+nuLL: ['str', 'nuLL', 'nuLL']
 'null': ['str', 'null', 'null']
 off: ['str', 'off', "off"]
 on: ['str', 'on', "on"]
