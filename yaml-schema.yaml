@@ -130,12 +130,15 @@
 'N':
   yaml11: ['bool', 'false()', "false"]
   failsafe, json, core: ['str', 'N', "N"]
-'no':
-  yaml11: ['bool', 'false()', "false"]
-  failsafe, json, core: ['str', 'no', "no"]
 'NO':
   yaml11: ['bool', 'false()', "false"]
   failsafe, json, core: ['str', 'NO', "NO"]
+'No':
+  yaml11: ['bool', 'false()', "false"]
+  failsafe, json, core: ['str', 'No', "No"]
+'no':
+  yaml11: ['bool', 'false()', "false"]
+  failsafe, json, core: ['str', 'no', "no"]
 'off':
   yaml11: ['bool', 'false()', "false"]
   failsafe, json, core: ['str', 'off', "off"]
@@ -155,11 +158,11 @@
   yaml11: ['bool', 'false()', "false"]
 '!!bool N':
   yaml11: ['bool', 'false()', "false"]
-'!!bool no':
+'!!bool NO':
   yaml11: ['bool', 'false()', "false"]
 '!!bool No':
   yaml11: ['bool', 'false()', "false"]
-'!!bool NO':
+'!!bool no':
   yaml11: ['bool', 'false()', "false"]
 '!!bool off':
   yaml11: ['bool', 'false()', "false"]
@@ -182,12 +185,15 @@
 '!!str N':
   failsafe, json, core: ['str', 'N', "N" ]
   yaml11: ['str', 'N', "'N'" ]
-'!!str no':
-  failsafe, json, core: ['str', 'no', "no" ]
-  yaml11: ['str', 'no', "'no'" ]
 '!!str NO':
   failsafe, json, core: ['str', 'NO', "NO" ]
   yaml11: ['str', 'NO', "'NO'" ]
+'!!str No':
+  failsafe, json, core: ['str', 'No', "No" ]
+  yaml11: ['str', 'No', "'No'" ]
+'!!str no':
+  failsafe, json, core: ['str', 'no', "no" ]
+  yaml11: ['str', 'no', "'no'" ]
 '!!str off':
   failsafe, json, core: ['str', 'off', "off" ]
   yaml11: ['str', 'off', "'off'" ]
