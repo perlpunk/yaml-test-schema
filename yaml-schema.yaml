@@ -427,11 +427,12 @@
 '!!int 0':
   json, core, yaml11: ['int', '0', '0']
 '!!int 00':
-  yaml11: ['int', '0', '0']
+  yaml11, core: ['int', '0', '0']
 '!!int 0011':
   yaml11: ['int', '9', '9']
   core: ['int', '11', '11']
 '!!int 010':
+  core: ['int', '10', '10']
   yaml11: ['int', '8', '8']
 '!!int 07':
   core: ['int', '7', '7']
